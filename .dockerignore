@@ -2,8 +2,9 @@ node_modules
 Dockerfile
 .git
 db_dump
+db_dump/
 docker-compose.yml
 README.md
 .devcontainer
 .dockerignore
-.gitignore
+package-lock.json
