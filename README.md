@@ -14,3 +14,11 @@ Environment
 
 
 db_dump source: https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/
+
+```
+$ docker-compose up --build
+$ docker-compose down
+```
+
+> Reopen in Container
+> 

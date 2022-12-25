@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   postgres:
-    image: 'postgres:12.13'
+    image: 'postgres:12.12'
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
@@ -37,11 +37,13 @@ services:
       - "8000:8000"
     volumes:
       - .:/workspace
-    command: >
-      sh -c "python manage.py migrate &&
-        python manage.py runserver 0.0.0.0:8000"
+    # command: >
+    #   sh -c "python manage.py migrate &&
+    #     python manage.py runserver 0.0.0.0:8000"
     networks:
       - env_net
+    stdin_open: true
+    tty: true
     depends_on:
       - postgres
 
