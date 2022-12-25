@@ -28,6 +28,23 @@ services:
     networks:
       - env_net
 
+  apps:
+    user: $UID:$GID
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/workspace
+    command: >
+      sh -c "python manage.py migrate &&
+        python manage.py runserver 0.0.0.0:8000"
+    networks:
+      - env_net
+    depends_on:
+      - postgres
+
   # elasticsearch:
   #   image: elasticsearch:8.2.3
   #   environment:
@@ -68,5 +85,5 @@ volumes:
   # elasticsearch-data:
 
 networks:
-  keepnet:
+  env_net:
     driver: bridge
