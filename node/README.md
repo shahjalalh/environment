@@ -1,1 +1,1 @@
-# Environment for Node, React
+# Environment for Node
