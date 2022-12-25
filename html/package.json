@@ -1,7 +1,7 @@
 {
   "name": "html",
   "version": "1.0.0",
-  "description": "",
+  "description": "Environment for HTML/CSS",
   "engines": {
     "node": ">=16.19.0 <18",
     "npm": "~8.19.3"

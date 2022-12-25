@@ -1,5 +1,11 @@
 # Environment for HTML/CSS
 
+## Update packages to latest version
+
+```shell
+$ npx npm-check-updates -u
+$ npm install 
+```
 
 ## BEM: Block Element Modifier
 
