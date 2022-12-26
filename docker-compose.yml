@@ -3,6 +3,7 @@ version: "3.7"
 services:
   postgres:
     image: 'postgres:12.12'
+    container_name: postgres
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
@@ -29,6 +30,7 @@ services:
       - env_net
 
   apps:
+    container_name: apps
     user: $UID:$GID
     build:
       context: .

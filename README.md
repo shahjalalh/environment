@@ -6,10 +6,10 @@ Environment
 - Django
 - Postgres & PgAdmin
 - Node
-- MongoDB
-- GraphQL
-- Redis
-- Elasticsearch, Logstash, and Kibana(ELK)
+- MongoDB(pending...)
+- GraphQL(pending...)
+- Redis(pending...)
+- Elasticsearch, Logstash, and Kibana(ELK)(pending...)
 - ...
 
 
@@ -20,5 +20,10 @@ $ docker-compose up --build
 $ docker-compose down
 ```
 
-> Reopen in Container
-> 
+Open in VSCode
+> Run ```docker-compose up``` in terminal
+> Attach to Running Container
+> May need to adjust workspace ```/workspace```
+
+Close in VSCode
+> Close Remote Container
