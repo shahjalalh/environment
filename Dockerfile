@@ -92,7 +92,6 @@ EXPOSE 8001 3001 22
 # set user
 RUN adduser \
     --disabled-password \
-    --no-create-home \
     adi && \
     mkdir -p /vol/web/media && \
     mkdir -p /vol/web/static && \
