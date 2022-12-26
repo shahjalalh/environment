@@ -25,5 +25,16 @@ Open in VSCode
 > Attach to Running Container
 > May need to adjust workspace ```/workspace```
 
+Switch User in the container
+```
+$ su adi
+```
+
+Creating Virtual Env, activate and deactivate
+```
+$ python -m venv py3env
+$ source py3env/bin/activate
+```
+
 Close in VSCode
 > Close Remote Container

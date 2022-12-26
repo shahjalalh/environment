@@ -3,7 +3,7 @@ FROM python:3.9.16-bullseye
 ENV PYTHONUNBUFFERED 1
 
 RUN apt-get update
-RUN apt-get -y install gnupg2 wget gcc libc-dev
+RUN apt-get -y install gnupg2 wget gcc libc-dev tar
 RUN apt-get -y install postgresql-client
 
 RUN /usr/local/bin/python -m pip install --upgrade pip
@@ -71,7 +71,33 @@ RUN set -ex \
   # smoke test
   && yarn --version
 
-# work-enverioment
-WORKDIR /workspace
+# NVM 
+# ENV NVM_DIR /root/.nvm
+# ENV NODE_VERSION v16.19.0
+# RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash \
+#     && . $NVM_DIR/nvm.sh \ 
+#     && nvm install $NODE_VERSION
 
-COPY . .
+# smoke test
+# RUN node --version \
+#     && npm --version 
+
+# work-enverioment
+WORKDIR /adi
+
+COPY ./adi .
+
+EXPOSE 8001 3001 22
+
+# set user
+RUN adduser \
+    --disabled-password \
+    --no-create-home \
+    adi && \
+    mkdir -p /vol/web/media && \
+    mkdir -p /vol/web/static && \
+    chown -R adi:adi /vol && \
+    chmod -R 755 /vol && \
+    usermod -aG sudo adi
+
+USER adi
